@@ -1,1 +1,10 @@
-tarea
+#Sumar el numero mas grande dos veces en python
+
+
+numero_mas_grande = float('inf')
+resultado = numero_mas_grande + numero_mas_grande - 1e308
+print(resultado)  # Esto imprimirá 1.7976931348623157e+308
+
+
+
+
