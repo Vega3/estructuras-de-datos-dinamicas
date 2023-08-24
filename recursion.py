@@ -34,7 +34,7 @@ def invert_second_half(input_str):
     return result
 
 #Caso de prueba
-output_string = invert_second_half("Estructuras")
+output_string = invert_second_half("Juegodetronos")
 print("caso prueba punto 2: ", output_string)
 
 
