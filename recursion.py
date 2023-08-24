@@ -73,7 +73,7 @@ def element_position(l, e, i):
         return element_position(l, e, i + 1)
 
 #Caso de prueba
-my_list = [1, 2, 3, 4, 5]
+my_list = [1, 2, 3, 4, 5, 28]
 element = 3
 index = 5
 
