@@ -93,6 +93,6 @@ def extraact_digits(s, i=0, n=0):
     return extraact_digits(s, i + 1, n)
 
 #Caso de prueba
-result = extraact_digits("DSasdD213SSA31Sa")
+result = extraact_digits("DSa1sdD213SSA31Sa")
 print("Caso de prueba punto 5: ", result)
     
