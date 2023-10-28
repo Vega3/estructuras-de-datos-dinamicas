@@ -30,7 +30,7 @@ public class BinaryTree {
         TreeNode root = null;
 
         while (true) {
-            System.out.print("Ingrese '1' para un árbol vacío, '0' para un árbol vacío, o 'X' para detenerse: ");
+            System.out.print("Ingrese '1' para un árbol infinito, '0' para un árbol vacio, o 'X' para detenerse: ");
             String choice = scanner.nextLine().toUpperCase();
 
             if (choice.equals("X")) {
@@ -99,6 +99,18 @@ public class BinaryTree {
         return 1 + countNodes(node.left) + countNodes(node.right);
     }
 
+    public static boolean searchValue(TreeNode node, int targetValue) {
+        if (node == null) {
+            return false;
+        }
+        if (node.value == targetValue) {
+            return true;
+        }
+        boolean leftResult = searchValue(node.left, targetValue);
+        boolean rightResult = searchValue(node.right, targetValue);
+        return leftResult || rightResult;
+    }    
+
     public static void main(String[] args) {
         TreeNode root = buildTree();
         Scanner scanner = new Scanner(System.in);
@@ -112,6 +124,7 @@ public class BinaryTree {
             System.out.println("5. Altura");
             System.out.println("6. Es completo");
             System.out.println("7. Número de Nodos");
+            System.out.println("8. Para encontrar un valor especifico en el arbol");
             System.out.println("X. Salir");
             System.out.print("Seleccione una opción: ");
             String choice = scanner.nextLine().toUpperCase();
@@ -139,7 +152,17 @@ public class BinaryTree {
                 System.out.println("Número de Nodos: " + countNodes(root));
             } else if (choice.equals("X") || choice.equals("x")) {
                 break;
-            } else {
+            } else if (choice.equals("8")) {
+                System.out.print("Ingrese el valor que desea buscar en el árbol: ");
+                int targetValue = Integer.parseInt(scanner.nextLine());
+                if (searchValue(root, targetValue)) {
+                    System.out.println("El valor " + targetValue + " se encuentra en el árbol.");
+                } else {
+                    System.out.println("El valor " + targetValue + " no se encuentra en el árbol.");
+                }
+            }
+        
+             else {
                 System.out.println("Opción no válida. Seleccione una opción del menú o 'X' para salir.");
             }
         }
